@@ -36,6 +36,9 @@
             <argument
                 android:name="uri"
                 app:argType="android.net.Uri" />
+            <argument
+                android:name="index"
+                app:argType="integer" />
         </fragment>
         <fragment
             android:id="@+id/createTreasureFragment"

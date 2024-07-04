@@ -9,12 +9,13 @@ import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import umc.hackathon.databinding.ItemPhotoBinding
 import umc.hackathon.databinding.ItemPhotoPickerButtonBinding
+import umc.hackathon.domain.model.Treasure
 
 class PhotoAdapter(
     private val onPhotoClick: () -> Unit,
-    private val onDeleteClick: (Uri) -> Unit,
-    private val onPhotoDetailClick: (Uri) -> Unit
-) : ListAdapter<Uri, RecyclerView.ViewHolder>(PhotoDiffCallback()) {
+    private val onDeleteClick: (Int) -> Unit,
+    private val onPhotoDetailClick: (Uri, Int) -> Unit
+) : ListAdapter<Treasure, RecyclerView.ViewHolder>(PhotoDiffCallback()) {
 
     companion object {
         private const val TYPE_PICKER_BUTTON = 0
@@ -55,16 +56,17 @@ class PhotoAdapter(
 
     class PhotoViewHolder(
         private val binding: ItemPhotoBinding,
-        private val onDeleteClick: (Uri) -> Unit,
-        private val onPhotoDetailClick: (Uri) -> Unit
+        private val onDeleteClick: (Int) -> Unit,
+        private val onPhotoDetailClick: (Uri, Int) -> Unit
     ) : RecyclerView.ViewHolder(binding.root) {
-        fun bind(uri: Uri) {
-            binding.imageView.setImageURI(uri)
+        fun bind(treasure: Treasure) {
+            binding.model = treasure
+            binding.imageView.setImageURI(treasure.uri)
             binding.btnDelete.setOnClickListener {
-                onDeleteClick(uri)
+                onDeleteClick(treasure.index)
             }
             binding.imageView.setOnClickListener {
-                onPhotoDetailClick(uri)
+                onPhotoDetailClick(treasure.uri, treasure.index)
             }
             if (binding.imgTxt != null) {
                 binding.imgTxt.visibility = View.VISIBLE
@@ -74,12 +76,12 @@ class PhotoAdapter(
         }
     }
 
-    class PhotoDiffCallback : DiffUtil.ItemCallback<Uri>() {
-        override fun areItemsTheSame(oldItem: Uri, newItem: Uri): Boolean {
+    class PhotoDiffCallback : DiffUtil.ItemCallback<Treasure>() {
+        override fun areItemsTheSame(oldItem: Treasure, newItem: Treasure): Boolean {
             return oldItem == newItem
         }
 
-        override fun areContentsTheSame(oldItem: Uri, newItem: Uri): Boolean {
+        override fun areContentsTheSame(oldItem: Treasure, newItem: Treasure): Boolean {
             return oldItem == newItem
         }
     }

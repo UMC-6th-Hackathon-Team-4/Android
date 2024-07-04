@@ -8,6 +8,7 @@ import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import androidx.fragment.app.viewModels
 import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.setupWithNavController
@@ -15,6 +16,7 @@ import dagger.hilt.android.AndroidEntryPoint
 import umc.hackathon.R
 import umc.hackathon.databinding.ActivityMainBinding
 import umc.hackathon.presentation.base.BaseActivity
+import umc.hackathon.presentation.create.CreateViewModel
 import umc.hackathon.presentation.mapview.MapViewViewModel
 import umc.hackathon.util.EditTextUtil.setOnEditorActionListener
 import umc.hackathon.util.repeatOnStarted
@@ -23,6 +25,7 @@ import umc.hackathon.util.repeatOnStarted
 class MainActivity : BaseActivity<ActivityMainBinding>(R.layout.activity_main) {
     private lateinit var navController: NavController
     private val mapViewModel: MapViewViewModel by viewModels()
+    private val createViewModel: CreateViewModel by viewModels()
     override fun initView() {
         binding.mapViewModel = mapViewModel
         initNavigator()

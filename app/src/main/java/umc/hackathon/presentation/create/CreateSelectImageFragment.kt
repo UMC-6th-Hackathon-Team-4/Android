@@ -2,6 +2,7 @@ package umc.hackathon.presentation.create
 
 import android.net.Uri
 import android.os.Bundle
+import androidx.fragment.app.activityViewModels
 import androidx.fragment.app.setFragmentResult
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
@@ -19,6 +20,7 @@ class CreateSelectImageFragment :
     private val navigator by lazy {
         findNavController()
     }
+    private val viewModel: CreateViewModel by activityViewModels()
 
     override fun initObserver() {
 
@@ -28,7 +30,12 @@ class CreateSelectImageFragment :
         binding.img.setImageURI(args.uri)
 
         binding.txSave.setOnClickListener {
-            navigator.popBackStack()
+            if (!binding.editTextText.text.toString().isEmpty()){
+                viewModel.setIsWritten(true)
+            } else {
+                viewModel.setIsWritten(false)
+            }
+            navigator.navigateUp()
             /*val content = binding.editTextText.text.toString()
 
 
@@ -39,6 +46,9 @@ class CreateSelectImageFragment :
                 }
             }
             setFragmentResult("photo_detail", result)*/
+        }
+        binding.btnBack.setOnClickListener {
+            navigator.navigateUp()
         }
         //parentFragmentManager.popBackStack()
     }
