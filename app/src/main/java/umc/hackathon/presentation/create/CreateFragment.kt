@@ -10,6 +10,6 @@ class CreateFragment : BaseFragment<FragmentCreateBinding>(R.layout.fragment_cre
     }
 
     override fun initView() {
-
+        
     }
 }

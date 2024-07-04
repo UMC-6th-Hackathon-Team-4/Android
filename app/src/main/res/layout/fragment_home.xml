@@ -9,17 +9,16 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:padding="24dp">
 
-        <TextView
+        <ImageView
             android:id="@+id/title_text"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_margin="28dp"
-            android:text="T gather"
-            android:textColor="@color/black"
+            android:layout_width="58dp"
+            android:layout_height="18dp"
+            android:src="@drawable/tgether"
             android:textSize="30sp"
-            android:textStyle="bold"
+            android:layout_marginTop="20dp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
