@@ -12,7 +12,7 @@ build
 captures
 .externalNativeBuild
 .cxx
+google-services.json
 local.properties
 .idea
 constant.xml
-google-services.json
