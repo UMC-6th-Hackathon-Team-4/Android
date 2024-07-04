@@ -55,7 +55,7 @@ class Holder(val binding: ItemLayoutBinding, val context:Context): RecyclerView.
                     dialog.dismiss()
                 }
 
-            val dialogPlace = dialogView.findViewById<TextView>(R.id.place_tv)
+            /*val dialogPlace = dialogView.findViewById<TextView>(R.id.place_tv)
             val dialogSpeak = dialogView.findViewById<TextView>(R.id.speak_tv)
             val dialogLock = dialogView.findViewById<TextView>(R.id.lock_tv)
             val dialogLock2 = dialogView.findViewById<TextView>(R.id.main)
@@ -72,7 +72,7 @@ class Holder(val binding: ItemLayoutBinding, val context:Context): RecyclerView.
                 dialogLock2.text = "보물 보러가기"
             }
             dialogpeople.text = "${data.people}명의 모임"
-            Glide.with(itemView).load(data.Img).into(dialogImg)
+            Glide.with(itemView).load(data.Img).into(dialogImg)*/
 
             val dialog = dialogBuilder.create()
             dialog.show()

@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.fragment.app.viewModels
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import dagger.hilt.android.AndroidEntryPoint
@@ -15,6 +16,7 @@ import umc.hackathon.databinding.FragmentHomeBinding
 import umc.hackathon.domain.model.TreasurePreview
 import umc.hackathon.presentation.base.BaseFragment
 import umc.hackathon.presentation.home.adapter.ImageTreasureRVA
+import umc.hackathon.util.repeatOnStarted
 
 @AndroidEntryPoint
 class HomeFragment : BaseFragment<FragmentHomeBinding>(R.layout.fragment_home), ImageTreasureRVA.TreasurePreviewItemClickListener {
@@ -23,8 +25,20 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(R.layout.fragment_home), 
         ImageTreasureRVA()
     }
     private val viewModel: HomeViewModel by activityViewModels()
-    override fun initObserver() {
 
+    private val navigator by lazy {
+        findNavController()
+    }
+    override fun initObserver() {
+        repeatOnStarted {
+            viewModel.navigateEvent.collect{
+                if(it){
+                    if(navigator.currentDestination?.id == R.id.homeFragment){
+                        navigator.navigate(R.id.action_homeFragment_to_createTreasureFragment)
+                    }
+                }
+            }
+        }
     }
 
     override fun initView() {

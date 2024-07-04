@@ -27,7 +27,7 @@
             android:id="@+id/temp_button"
             android:layout_width="350dp"
             android:layout_height="160dp"
-            android:layout_margin="16dp"
+            android:layout_marginTop="32dp"
             android:text="dsd"
             android:background="@drawable/rectangle_corner_10_brown"
             app:layout_constraintTop_toBottomOf="@id/title_text"

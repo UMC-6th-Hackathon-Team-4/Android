@@ -32,7 +32,7 @@
             android:layout_width="10dp"
             android:layout_height="18dp"
             android:layout_marginStart="32dp"
-            android:layout_marginTop="21dp"
+            android:layout_marginTop="41dp"
             android:background="@drawable/btn_back"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />

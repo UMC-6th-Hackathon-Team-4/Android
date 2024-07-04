@@ -17,7 +17,7 @@
             android:layout_width="10dp"
             android:layout_height="18dp"
             android:layout_marginStart="32dp"
-            android:layout_marginTop="21dp"
+            android:layout_marginTop="41dp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:srcCompat="@drawable/btn_back" />
@@ -27,29 +27,13 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="20dp"
-            android:layout_marginTop="20dp"
             android:fontFamily="@font/pretendard_semibold"
             android:text="모임장소와 제목을 입력해주세요. "
             android:textSize="16sp"
+            android:layout_marginTop="24dp"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/back_btn" />
-
-        <EditText
-            android:id="@+id/et1"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:layout_marginEnd="20dp"
-            android:background="@drawable/custom_edittext_create"
-            android:ems="10"
-            android:fontFamily="@font/pretendard_medium"
-            android:hint="ex) 대전 빵지순례 / 최소 5자 이상"
-            android:inputType="text"
-            android:padding="9dp"
-            android:textSize="14sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="@+id/txTitle1"
-            app:layout_constraintTop_toBottomOf="@+id/txTitle1" />
+            app:layout_constraintTop_toBottomOf="@+id/back_btn"
+            tools:layout_editor_absoluteY="83dp" />
 
         <ImageView
             android:id="@+id/asterisk"
@@ -60,12 +44,29 @@
             app:layout_constraintTop_toTopOf="@+id/txTitle1"
             app:srcCompat="@drawable/ic_nec" />
 
+        <EditText
+            android:id="@+id/et1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:layout_marginEnd="20dp"
+            android:background="@drawable/custom_edittext_create"
+            android:ems="10"
+            android:fontFamily="@font/pretendard_medium"
+            android:hint="ex) 대전 빵지순례 / 최소 5자 이상"
+            android:inputType="textMultiLine"
+            android:padding="7dp"
+            android:textSize="14sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/txTitle1"
+            app:layout_constraintTop_toBottomOf="@+id/txTitle1" />
+
         <TextView
             android:id="@+id/txTitle2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="20dp"
-            android:layout_marginTop="22dp"
+            android:layout_marginTop="40dp"
             android:fontFamily="@font/pretendard_semibold"
             android:text="모임에 대한 내용을 입력해주세요."
             android:textSize="16sp"
@@ -80,119 +81,54 @@
             android:layout_marginEnd="20dp"
             android:background="@drawable/custom_edittext_create"
             android:ems="10"
+            android:gravity="top"
             android:fontFamily="@font/pretendard_medium"
             android:hint="300자 이내"
-            android:inputType="text"
-            android:padding="7dp"
-            android:textAlignment="textStart"
+            android:inputType="textMultiLine"
+            android:padding="8dp"
             android:textSize="14sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="@+id/txTitle2"
             app:layout_constraintTop_toBottomOf="@+id/txTitle2" />
 
         <TextView
-            android:id="@+id/txTitle3"
+            android:id="@+id/location_choce_tv"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="20dp"
-            android:layout_marginTop="22dp"
             android:fontFamily="@font/pretendard_semibold"
-            android:text="보물을 열어볼 장소를 선택해주세요."
+            android:text="모임장소와 제목을 입력해주세요. "
             android:textSize="16sp"
+            android:layout_marginTop="24dp"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/et2" />
-
-        <EditText
-            android:id="@+id/et3"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:layout_marginEnd="20dp"
-            android:background="@drawable/custom_edittext_create"
-            android:ems="10"
-            android:fontFamily="@font/pretendard_medium"
-            android:hint="위치를 입력해주세요. (지번, 동, 장소명)"
-            android:inputType="text"
-            android:padding="9dp"
-            android:textAlignment="textStart"
-            android:textSize="14sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="@+id/txTitle3"
-            app:layout_constraintTop_toBottomOf="@+id/txTitle3" />
+            app:layout_constraintTop_toBottomOf="@+id/et2"
+            tools:layout_editor_absoluteY="83dp" />
 
         <ImageView
             android:id="@+id/asterisk2"
             android:layout_width="10dp"
             android:layout_height="10dp"
             android:layout_marginStart="-4dp"
-            app:layout_constraintStart_toEndOf="@+id/txTitle3"
-            app:layout_constraintTop_toTopOf="@+id/txTitle3"
+            app:layout_constraintStart_toEndOf="@+id/location_choce_tv"
+            app:layout_constraintTop_toTopOf="@+id/location_choce_tv"
             app:srcCompat="@drawable/ic_nec" />
 
-        <TextView
-            android:id="@+id/txTitle4"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="20dp"
-            android:layout_marginTop="22dp"
-            android:fontFamily="@font/pretendard_semibold"
-            android:text="날짜를 선택해주세요."
-            android:textSize="16sp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/et3" />
-
         <EditText
-            android:id="@+id/et4"
+            android:id="@+id/location_choce_et"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="12dp"
             android:layout_marginEnd="20dp"
             android:background="@drawable/custom_edittext_create"
             android:ems="10"
             android:fontFamily="@font/pretendard_medium"
-            android:hint="          7.5(금)"
-            android:inputType="text"
-            android:padding="9dp"
-            android:textAlignment="textStart"
-            android:textColor="#000000"
-            android:textColorHint="#000000"
+            android:hint="위치를 입력해주세요. (지번, 동, 장소명)"
+            android:inputType="textMultiLine"
+            android:padding="7dp"
             android:textSize="14sp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="@+id/txTitle4"
-            app:layout_constraintTop_toBottomOf="@+id/txTitle4" />
-
-        <ImageView
-            android:id="@+id/imageView2"
-            android:layout_width="24dp"
-            android:layout_height="24dp"
-            android:layout_marginStart="7dp"
-            app:layout_constraintBottom_toBottomOf="@+id/et4"
-            app:layout_constraintStart_toStartOf="@+id/et4"
-            app:layout_constraintTop_toTopOf="@+id/et4"
-            app:srcCompat="@drawable/bx_calendar" />
-
-        <ImageView
-            android:id="@+id/btnNext"
-            android:layout_width="312dp"
-            android:layout_height="51.2dp"
-            android:layout_marginStart="24dp"
-            android:layout_marginEnd="24dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.49"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/et4"
-            app:layout_constraintVertical_bias="0.981"
-            app:srcCompat="@drawable/btn_con" />
-
-        <ImageView
-            android:id="@+id/asterisk3"
-            android:layout_width="10dp"
-            android:layout_height="10dp"
-            android:layout_marginStart="-4dp"
-            app:layout_constraintStart_toEndOf="@+id/txTitle4"
-            app:layout_constraintTop_toTopOf="@+id/txTitle4"
-            app:srcCompat="@drawable/ic_nec" />
+            app:layout_constraintStart_toStartOf="@+id/location_choce_tv"
+            app:layout_constraintTop_toBottomOf="@+id/location_choce_tv" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
