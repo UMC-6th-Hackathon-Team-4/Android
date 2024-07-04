@@ -136,3 +136,4 @@ class MapViewFragment : BaseFragment<FragmentMapViewBinding>(R.layout.fragment_m
         val LOCATION_PERMISSION_REQUEST_CODE = 1001
     }
 }
+
