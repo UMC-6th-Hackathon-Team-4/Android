@@ -28,7 +28,7 @@ import javax.inject.Inject
 //class CreateViewModel(private val repository: Repository) : ViewModel() {
 
 @HiltViewModel
-class CreateViewModel @Inject constructor(
+class CreateSelectImageViewModel @Inject constructor(
     private val repository: CreateRepositoryImpl
 ) : ViewModel() {
     private val _selectedPhotos = MutableStateFlow<List<Treasure>>(emptyList())
@@ -105,14 +105,14 @@ class CreateViewModel @Inject constructor(
     }
 
      */
-/*
-    fun create(){
-        viewModelScope.launch {
-            repository.createTreasure().onSuccess {
+    /*
+        fun create(){
+            viewModelScope.launch {
+                repository.createTreasure().onSuccess {
 
+                }
             }
         }
-    }
 
- */
+     */
 }

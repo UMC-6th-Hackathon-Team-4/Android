@@ -12,7 +12,7 @@
         android:title="mapView" />
 
     <item
-        android:id="@+id/createFragment"
+        android:id="@+id/createTab"
         android:icon="@drawable/ic_unselected_create"
         android:title="create" />
 

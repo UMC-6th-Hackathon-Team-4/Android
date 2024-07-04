@@ -12,6 +12,7 @@ class NaverRepositoryImpl @Inject constructor(
 ) : NaverRepository {
     override suspend fun fetchGeocoding(query: String): NetworkResult<GeocodingResponse> {
         return handleApi({api.fetchGeocoding(query)}) {response: GeocodingResponse -> response}
+        //ResponseBody<response> -> response.result
     }
 
 }

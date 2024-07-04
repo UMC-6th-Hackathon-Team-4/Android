@@ -15,10 +15,27 @@
         android:id="@+id/previousTreasureFragment"
         android:name="umc.hackathon.presentation.treasure.PreviousTreasureFragment"
         android:label="PreviousTreasureFragment" />
-    <fragment
-        android:id="@+id/createFragment"
-        android:name="umc.hackathon.presentation.create.CreateFragment"
-        android:label="CreateFragment" />
+
+    <navigation android:id="@+id/createTab"
+        app:startDestination="@id/createFragment">
+        <fragment
+            android:id="@+id/createFragment"
+            android:name="umc.hackathon.presentation.create.CreateFragment"
+            android:label="CreateFragment" >
+            <action
+                android:id="@+id/action_createFragment_to_createSelectAddFragment"
+                app:destination="@id/createSelectAddFragment">
+            <argument
+                android:name="tres_id"
+                app:argType="integer" />
+            </action>
+        </fragment>
+        <fragment
+            android:id="@+id/createSelectAddFragment"
+            android:name="umc.hackathon.presentation.create.CreateSelectAddFragment"
+            android:label="CreateSelectAddFragment" />
+    </navigation>
+
     <navigation android:id="@+id/homeTab"
         app:startDestination="@id/homeFragment">
         <fragment
@@ -49,4 +66,7 @@
                 app:destination="@id/createSelectImageFragment" />
         </fragment>
     </navigation>
+    <action
+        android:id="@+id/action_global_homeFragment"
+        app:destination="@id/homeFragment" />
 </navigation>

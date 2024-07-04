@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/back"
+            android:layout_width="320dp"
+            android:layout_height="250dp"
+            android:background="@drawable/custom_dialogue_radius"
+            android:clickable="true"
+            android:focusable="true"
+            tools:layout_editor_absoluteX="-3dp"
+            tools:layout_editor_absoluteY="0dp" />
+
+        <TextView
+            android:id="@+id/tx_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="105dp"
+            android:fontFamily="@font/pretendard_bold"
+            android:lineSpacingExtra="8sp"
+            android:text="등록되었습니다"
+            android:textColor="#000000"
+            android:textSize="27sp"
+            app:layout_constraintEnd_toEndOf="@+id/back"
+            app:layout_constraintStart_toStartOf="@+id/back"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/btnCreateSave"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:layout_marginBottom="10dp"
+            app:layout_constraintBottom_toBottomOf="@+id/back"
+            app:layout_constraintEnd_toEndOf="@+id/back"
+            app:layout_constraintStart_toStartOf="@+id/back"
+            app:srcCompat="@drawable/btn_create" />
+
+        <ImageView
+            android:id="@+id/imageView6"
+            android:layout_width="70dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="30dp"
+            app:layout_constraintStart_toStartOf="@+id/back"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/bronze" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
