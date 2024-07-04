@@ -51,7 +51,6 @@ object NetworkModule {
             level = HttpLoggingInterceptor.Level.BODY
         }
         return OkHttpClient.Builder().apply {
-
             addInterceptor(interceptor)
             connectTimeout(5, TimeUnit.SECONDS)
             readTimeout(5, TimeUnit.SECONDS)
@@ -67,7 +66,7 @@ object NetworkModule {
         gsonConverterFactory: GsonConverterFactory
     ): Retrofit {
         return Retrofit.Builder()
-            .baseUrl("")
+            .baseUrl(MainApplication.getString(R.string.base_url))
             .addConverterFactory(gsonConverterFactory)
             .client(client)
             .build()

@@ -22,16 +22,44 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
-        <Button
+
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/temp_button"
             android:layout_width="350dp"
             android:layout_height="160dp"
             android:layout_margin="16dp"
             android:text="dsd"
-            android:background="@drawable/background_radius"
+            android:background="@drawable/rectangle_corner_10_brown"
             app:layout_constraintTop_toBottomOf="@id/title_text"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent" />
+            app:layout_constraintStart_toStartOf="parent">
+
+            <TextView
+                android:id="@+id/title_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="지은 님,\n157일 뒤에 보물상자 하나가 열려요."
+                android:layout_marginTop="24dp"
+                android:layout_marginStart="20dp"
+                style="@style/title"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:textColor="@color/white"/>
+
+            <ImageView
+                android:id="@+id/banner_iv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_banner"
+                android:scaleType="centerInside"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginEnd="-100dp"
+                />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
 
         <androidx.recyclerview.widget.RecyclerView
