@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/main_graph"
+    app:startDestination="@id/homeFragment2">
+
+    <fragment
+        android:id="@+id/secondFragment"
+        android:name="umc.hackathon.presentation.SecondFragment"
+        android:label="SecondFragment" />
+    <fragment
+        android:id="@+id/thirdFragment"
+        android:name="umc.hackathon.presentation.ThirdFragment"
+        android:label="ThirdFragment" />
+    <fragment
+        android:id="@+id/fourthFragment"
+        android:name="umc.hackathon.presentation.FourthFragment"
+        android:label="FourthFragment" />
+    <fragment
+        android:id="@+id/homeFragment2"
+        android:name="umc.hackathon.presentation.HomeFragment"
+        android:label="HomeFragment" />
+</navigation>

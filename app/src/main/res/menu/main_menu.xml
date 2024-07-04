@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/homeFragment2"
+        android:icon="@drawable/ic_dummy"
+        android:title="home" />
+
+    <item
+        android:id="@+id/secondFragment"
+        android:icon="@drawable/ic_dummy"
+        android:title="second" />
+
+    <item
+        android:id="@+id/thirdFragment"
+        android:icon="@drawable/ic_dummy"
+        android:title="third" />
+
+    <item
+        android:id="@+id/fourthFragment"
+        android:icon="@drawable/ic_dummy"
+        android:title="fourth" />
+
+
+</menu>
