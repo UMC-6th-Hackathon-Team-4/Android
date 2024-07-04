@@ -9,12 +9,14 @@ import androidx.fragment.app.activityViewModels
 import androidx.fragment.app.viewModels
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import dagger.hilt.android.AndroidEntryPoint
 import umc.hackathon.R
 import umc.hackathon.databinding.FragmentHomeBinding
 import umc.hackathon.domain.model.TreasurePreview
 import umc.hackathon.presentation.base.BaseFragment
 import umc.hackathon.presentation.home.adapter.ImageTreasureRVA
 
+@AndroidEntryPoint
 class HomeFragment : BaseFragment<FragmentHomeBinding>(R.layout.fragment_home), ImageTreasureRVA.TreasurePreviewItemClickListener {
 
     private val imageTreasureRVA by lazy {
@@ -28,7 +30,7 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(R.layout.fragment_home), 
     override fun initView() {
         // Sample data
         initRVA()
-
+        viewModel.fetchTreasureList()
     }
 
     private fun initRVA(){
