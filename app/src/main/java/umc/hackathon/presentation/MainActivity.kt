@@ -17,6 +17,7 @@ import umc.hackathon.R
 import umc.hackathon.databinding.ActivityMainBinding
 import umc.hackathon.presentation.base.BaseActivity
 import umc.hackathon.presentation.create.CreateViewModel
+import umc.hackathon.presentation.home.HomeViewModel
 import umc.hackathon.presentation.mapview.MapViewViewModel
 import umc.hackathon.util.EditTextUtil.setOnEditorActionListener
 import umc.hackathon.util.repeatOnStarted
@@ -26,6 +27,7 @@ class MainActivity : BaseActivity<ActivityMainBinding>(R.layout.activity_main) {
     private lateinit var navController: NavController
     private val mapViewModel: MapViewViewModel by viewModels()
     private val createViewModel: CreateViewModel by viewModels()
+    private val homeViewModel: HomeViewModel by viewModels()
     override fun initView() {
         binding.mapViewModel = mapViewModel
         initNavigator()

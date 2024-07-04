@@ -6,53 +6,51 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.recyclerview.widget.DiffUtil
+import androidx.recyclerview.widget.ListAdapter
 import umc.hackathon.R
 import umc.hackathon.databinding.ItemTreasureBinding
+import umc.hackathon.domain.model.TreasurePreview
+class ImageTreasureRVA : ListAdapter<TreasurePreview, ImageTreasureRVA.TreasurePreviewViewHolder>(DiffCallback()) {
 
-//class ImageTreasureRVA (private val treasures : List<TreasureData>) : RecyclerView.Adapter<ImageTreasureRVA.TreasureViewHolder>() {
-//
-//    data class TreasureData(val imageResId: Int, val description: String)
-//
-//    //ViewHolder 클래스
-//    inner class TreasureViewHolder(treasureview: View) : RecyclerView.ViewHolder(treasureview){
-//        val treasureView: ImageView = treasureview.findViewById(R.id.treasureView)
-//        val textView: TextView = treasureview.findViewById(R.id.textView)
-//    }
+    private var treasurePreviewItemClickListener: TreasurePreviewItemClickListener? = null
+
+    fun setTreasurePreviewItemClickListener(listener: TreasurePreviewItemClickListener){
+        treasurePreviewItemClickListener = listener
+    }
 
 
-    class ImageTreasureRVA(
-        private val treasures: List<TreasureData>,
-        private val onItemClick: (TreasureData) -> Unit
-    ) : RecyclerView.Adapter<ImageTreasureRVA.TreasureViewHolder>() {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): TreasurePreviewViewHolder {
+        return TreasurePreviewViewHolder(
+            ItemTreasureBinding.inflate(
+                LayoutInflater.from(parent.context), parent, false
+            )
+        )
+    }
 
-        data class TreasureData(val imageResId: Int, val description: String)
+    override fun onBindViewHolder(holder: TreasurePreviewViewHolder, position: Int) {
+        holder.bind(currentList[position])
+    }
 
-        inner class TreasureViewHolder(treasureView: View) : RecyclerView.ViewHolder(treasureView) {
-            val treasureView: ImageView = treasureView.findViewById(R.id.treasureView)
-            val textView: TextView = treasureView.findViewById(R.id.textView)
-
-            init {
-                treasureView.setOnClickListener {
-                    val position = adapterPosition
-                    if (position != RecyclerView.NO_POSITION) {
-                        onItemClick(treasures[position])
-                    }
+    inner class TreasurePreviewViewHolder(private val binding: ItemTreasureBinding) :
+        RecyclerView.ViewHolder(binding.root) {
+            fun bind(treasurePreview: TreasurePreview){
+                binding.model = treasurePreview
+                binding.root.setOnClickListener {
+                    treasurePreviewItemClickListener?.onClick(treasurePreview.id)
                 }
             }
         }
 
+    class DiffCallback : DiffUtil.ItemCallback<TreasurePreview>() {
+        override fun areItemsTheSame(oldItem: TreasurePreview, newItem: TreasurePreview) =
+            oldItem.id == newItem.id
 
-    // onCreateViewHolder: 뷰 홀더를 생성하여 반환
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): TreasureViewHolder {
-        val view = LayoutInflater.from(parent.context).inflate(R.layout.item_treasure, parent, false)
-        return TreasureViewHolder(view)
-    }
-    // onBindViewHolder: 뷰 홀더에 데이터를 바인딩
-    override fun onBindViewHolder(holder: TreasureViewHolder, position: Int) {
-        val item = treasures[position]
-        holder.treasureView.setImageResource(item.imageResId)
-        holder.textView.text = item.description
+        override fun areContentsTheSame(oldItem: TreasurePreview, newItem: TreasurePreview) =
+            oldItem == newItem
     }
 
-    override fun getItemCount(): Int = treasures.size
+    interface TreasurePreviewItemClickListener{
+        fun onClick(id: Int)
+    }
 }
