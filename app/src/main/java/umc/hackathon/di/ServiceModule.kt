@@ -5,6 +5,7 @@ import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.components.SingletonComponent
 import retrofit2.Retrofit
+import umc.hackathon.data.api.NaverApi
 import javax.inject.Singleton
 
 @Module
@@ -14,9 +15,9 @@ object ServiceModule {
         return this.create(T::class.java)
     }
 
-    /*@Provides
+    @Provides
     @Singleton
-    fun provideApi(retrofit: Retrofit): Service {
+    fun provideNaverApi(@NetworkModule.NaverRetrofit retrofit: Retrofit): NaverApi {
         return retrofit.buildService()
-    }*/
+    }
 }

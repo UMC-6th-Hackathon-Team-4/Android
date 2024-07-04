@@ -4,9 +4,12 @@ import android.Manifest
 import android.content.pm.PackageManager
 import android.os.Build
 import android.util.Log
+import android.view.inputmethod.EditorInfo
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
+import androidx.fragment.app.activityViewModels
+import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
 import com.google.android.gms.location.FusedLocationProviderClient
 import com.google.android.gms.location.LocationServices
@@ -24,6 +27,8 @@ import kotlinx.coroutines.launch
 import umc.hackathon.R
 import umc.hackathon.databinding.FragmentMapViewBinding
 import umc.hackathon.presentation.base.BaseFragment
+import umc.hackathon.util.EditTextUtil.setOnEditorActionListener
+import umc.hackathon.util.repeatOnStarted
 
 @AndroidEntryPoint
 class MapViewFragment : BaseFragment<FragmentMapViewBinding>(R.layout.fragment_map_view) {
@@ -40,16 +45,26 @@ class MapViewFragment : BaseFragment<FragmentMapViewBinding>(R.layout.fragment_m
             // 권한이 거부된 경우 처리 (예: 사용자에게 권한이 필요하다고 알리기)
         }
     }
-    override fun initObserver() {
 
+    private val viewModel: MapViewViewModel by activityViewModels()
+    override fun initObserver() {
+        repeatOnStarted {
+            viewModel.latLng.collect{
+                naverMap?.moveCamera(CameraUpdate.scrollTo(it))
+            }
+        }
     }
 
     override fun initView() {
+        binding.viewModel = viewModel
         fusedLocationClient = LocationServices.getFusedLocationProviderClient(requireActivity())
         checkAndRequestLocationPermissions()
         locationSource =
             FusedLocationSource(this, LOCATION_PERMISSION_REQUEST_CODE)
         initMap()
+        binding.searchAddressEt.setOnEditorActionListener(EditorInfo.IME_ACTION_DONE){
+            viewModel.fetchGeocoding(binding.searchAddressEt.text.toString())
+        }
     }
 
     private fun requestLocationPermission() {
