@@ -1,12 +1,12 @@
-package umc.hackathon.presentation
+package umc.hackathon.presentation.mapview
 
 import dagger.hilt.android.AndroidEntryPoint
 import umc.hackathon.R
-import umc.hackathon.databinding.FragmentHomeBinding
+import umc.hackathon.databinding.FragmentMapViewBinding
 import umc.hackathon.presentation.base.BaseFragment
 
 @AndroidEntryPoint
-class HomeFragment : BaseFragment<FragmentHomeBinding>(R.layout.fragment_home) {
+class MapViewFragment : BaseFragment<FragmentMapViewBinding>(R.layout.fragment_map_view) {
     override fun initObserver() {
 
     }

@@ -2,22 +2,25 @@
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/main_graph"
-    app:startDestination="@id/homeFragment2">
-
+    app:startDestination="@id/homeFragment">
     <fragment
-        android:id="@+id/secondFragment"
-        android:name="umc.hackathon.presentation.SecondFragment"
-        android:label="SecondFragment" />
-    <fragment
-        android:id="@+id/thirdFragment"
-        android:name="umc.hackathon.presentation.ThirdFragment"
-        android:label="ThirdFragment" />
-    <fragment
-        android:id="@+id/fourthFragment"
-        android:name="umc.hackathon.presentation.FourthFragment"
-        android:label="FourthFragment" />
-    <fragment
-        android:id="@+id/homeFragment2"
-        android:name="umc.hackathon.presentation.HomeFragment"
+        android:id="@+id/homeFragment"
+        android:name="umc.hackathon.presentation.home.HomeFragment"
         android:label="HomeFragment" />
+    <fragment
+        android:id="@+id/settingFragment"
+        android:name="umc.hackathon.presentation.setting.SettingFragment"
+        android:label="SettingFragment" />
+    <fragment
+        android:id="@+id/mapViewFragment"
+        android:name="umc.hackathon.presentation.mapview.MapViewFragment"
+        android:label="MapViewFragment" />
+    <fragment
+        android:id="@+id/previousTreasureFragment"
+        android:name="umc.hackathon.presentation.treasure.PreviousTreasureFragment"
+        android:label="PreviousTreasureFragment" />
+    <fragment
+        android:id="@+id/createFragment"
+        android:name="umc.hackathon.presentation.create.CreateFragment"
+        android:label="CreateFragment" />
 </navigation>
