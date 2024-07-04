@@ -38,11 +38,12 @@
             android:id="@+id/appCompatButton"
             android:layout_width="290dp"
             android:layout_height="76.5dp"
-            android:layout_marginTop="11dp"
+            android:layout_marginTop="8dp"
             android:background="@drawable/background_rec_small"
             android:clickable="true"
             android:focusable="true"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.495"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/sample_image" />
 
@@ -66,33 +67,104 @@
             android:clickable="true"
             android:focusable="true"
             app:layout_constraintEnd_toEndOf="@+id/appCompatButton"
-            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintHorizontal_bias="1.0"
             app:layout_constraintStart_toEndOf="@+id/b1"
             app:layout_constraintTop_toBottomOf="@+id/appCompatButton" />
 
         <ImageView
-            android:clickable="true"
             android:id="@+id/add_memory"
             android:layout_width="290dp"
             android:layout_height="77dp"
             android:background="@color/white"
+            android:clickable="true"
+            android:focusable="true"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.495"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/b1"
-            android:focusable="true" />
+            app:layout_constraintTop_toBottomOf="@+id/b1" />
 
         <TextView
+            android:id="@+id/main"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="26dp"
-            android:layout_marginStart="14dp"
             android:fontFamily="@font/pretendard_bold"
             android:text="추억 추가하기"
             android:textColor="@color/orange"
             android:textFontWeight="700"
             android:textSize="20sp"
+            app:layout_constraintBottom_toBottomOf="@+id/add_memory"
+            app:layout_constraintEnd_toEndOf="@+id/add_memory"
+            app:layout_constraintHorizontal_bias="0.077"
             app:layout_constraintStart_toStartOf="@+id/add_memory"
-            app:layout_constraintTop_toBottomOf="@+id/b1" />
+            app:layout_constraintTop_toBottomOf="@+id/b1"
+            app:layout_constraintVertical_bias="0.136" />
+
+        <TextView
+            android:id="@+id/place_tv"
+            android:layout_width="122dp"
+            android:layout_height="32dp"
+            android:layout_marginBottom="8dp"
+            android:fontFamily="@font/pretendard_bold"
+            android:gravity="center|left"
+            android:text="TextView"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toTopOf="@+id/speak_tv"
+            app:layout_constraintEnd_toEndOf="@+id/appCompatButton"
+            app:layout_constraintHorizontal_bias="0.083"
+            app:layout_constraintStart_toStartOf="@+id/appCompatButton"
+            app:layout_constraintTop_toBottomOf="@+id/sample_image"
+            app:layout_constraintVertical_bias="1.0" />
+
+        <TextView
+            android:id="@+id/speak_tv"
+            android:layout_width="262dp"
+            android:layout_height="16dp"
+            android:layout_marginBottom="16dp"
+            android:fontFamily="@font/pretendard_bold"
+            android:gravity="left"
+            android:text="TextView"
+            app:layout_constraintBottom_toBottomOf="@+id/appCompatButton"
+            app:layout_constraintEnd_toEndOf="@+id/appCompatButton"
+            app:layout_constraintStart_toStartOf="@+id/appCompatButton" />
+
+        <TextView
+            android:id="@+id/lock_tv"
+            android:layout_width="81dp"
+            android:layout_height="20dp"
+            android:fontFamily="@font/pretendard_bold"
+            android:text="TextView"
+            app:layout_constraintBottom_toBottomOf="@+id/b1"
+            app:layout_constraintEnd_toEndOf="@+id/b1"
+            app:layout_constraintHorizontal_bias="0.234"
+            app:layout_constraintStart_toStartOf="@+id/b1"
+            app:layout_constraintTop_toTopOf="@+id/b1"
+            app:layout_constraintVertical_bias="0.529" />
+
+        <TextView
+            android:id="@+id/people_tv"
+            android:layout_width="97dp"
+            android:layout_height="24dp"
+            android:fontFamily="@font/pretendard_bold"
+            android:text="TextView"
+            app:layout_constraintBottom_toBottomOf="@+id/b2"
+            app:layout_constraintEnd_toEndOf="@+id/b2"
+            app:layout_constraintHorizontal_bias="0.208"
+            app:layout_constraintStart_toEndOf="@+id/b1"
+            app:layout_constraintTop_toTopOf="@+id/b2"
+            app:layout_constraintVertical_bias="0.692" />
+
+        <ImageView
+            android:id="@+id/imageView4"
+            android:layout_width="21dp"
+            android:layout_height="31dp"
+            app:layout_constraintBottom_toBottomOf="@+id/add_memory"
+            app:layout_constraintEnd_toEndOf="@+id/add_memory"
+            app:layout_constraintHorizontal_bias="0.875"
+            app:layout_constraintStart_toEndOf="@+id/main"
+            app:layout_constraintTop_toTopOf="@+id/add_memory"
+            app:layout_constraintVertical_bias="0.586"
+            app:srcCompat="@drawable/ic_more_btn" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

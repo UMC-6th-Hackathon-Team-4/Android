@@ -26,18 +26,18 @@ class PreviousTreasureFragment: BaseFragment<FragmentPreviousTreasureBinding>(R.
 
         setdata()
 
-        val adapter = ItemAdapter()
-        adapter.dataList = data
+        val adapter = ItemAdapter(requireContext(),data)
+
         recyclerView.layoutManager = GridLayoutManager(requireContext(), 2)
         recyclerView.adapter = adapter // adapter 설정
     }
 
     fun setdata(){
-        data.add(Item(false, "대전 빵지순례",8,157))
-        data.add(Item(true, "가평 빠지여행",11,248))
-        data.add(Item(false, "거창 캠핑",33,32))
-        data.add(Item(false, "속초 가족여행",3,747))
-        data.add(Item(false, "속초 대진즈",8,157))
-        data.add(Item(true, "대전 빵지순례",8,157))
+        data.add(Item(false, "대전 빵지순례",8,157,"물에서 노는 시간 2시간, 먹는 시간 5시간",R.drawable.rectangle_corner_10_white))
+        data.add(Item(true, "가평 빠지여행",11,248,"물에서 노는 시간 2시간, 먹는 시간 5시간",R.drawable.rectangle_corner_10_white))
+        data.add(Item(false, "거창 캠핑",33,32,"물에서 노는 시간 2시간, 먹는 시간 5시간",R.drawable.rectangle_corner_10_white))
+        data.add(Item(false, "속초 가족여행",3,747,"물에서 노는 시간 2시간, 먹는 시간 5시간",R.drawable.rectangle_corner_10_white))
+        data.add(Item(false, "속초 대진즈",8,157,"물에서 노는 시간 2시간, 먹는 시간 5시간",R.drawable.rectangle_corner_10_white))
+        data.add(Item(true, "대전 빵지순례",8,157,"물에서 노는 시간 2시간, 먹는 시간 5시간",R.drawable.rectangle_corner_10_white))
     }
 }
