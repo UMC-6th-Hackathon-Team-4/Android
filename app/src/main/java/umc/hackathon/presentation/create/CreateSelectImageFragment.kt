@@ -3,6 +3,7 @@ package umc.hackathon.presentation.create
 import android.net.Uri
 import android.os.Bundle
 import androidx.fragment.app.setFragmentResult
+import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import dagger.hilt.android.AndroidEntryPoint
 import umc.hackathon.R
@@ -15,6 +16,9 @@ class CreateSelectImageFragment :
 
     //private lateinit var photoUri: Uri
     private val args: CreateSelectImageFragmentArgs by navArgs()
+    private val navigator by lazy {
+        findNavController()
+    }
 
     override fun initObserver() {
 
@@ -24,6 +28,7 @@ class CreateSelectImageFragment :
         binding.img.setImageURI(args.uri)
 
         binding.txSave.setOnClickListener {
+            navigator.popBackStack()
             /*val content = binding.editTextText.text.toString()
 
 

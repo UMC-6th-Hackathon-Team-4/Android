@@ -69,6 +69,7 @@ class CreateTreasureFragment : BaseFragment<FragmentCreateTreasureBinding>(R.lay
                 val requestFile = file.asRequestBody("multipart/form-data".toMediaTypeOrNull())
                 MultipartBody.Part.createFormData("images", file.name, requestFile)
             }
+            navigator.navigateUp()
            // viewModel.uploadPost(title, content, imageParts)
         }
     }
