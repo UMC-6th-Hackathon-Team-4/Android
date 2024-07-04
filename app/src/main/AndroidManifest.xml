@@ -26,6 +26,11 @@
         <activity
             android:name=".presentation.MainActivity"
             android:exported="true">
+
+        </activity>
+        <activity android:name="umc.hackathon.presentation.splash.SplashActivity"
+            android:theme="@style/Base.Theme.MyApplication"
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

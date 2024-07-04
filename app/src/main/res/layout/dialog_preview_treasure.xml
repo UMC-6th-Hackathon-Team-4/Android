@@ -11,160 +11,152 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <ImageView
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/back"
             android:layout_width="311dp"
             android:layout_height="561dp"
-            android:background="@color/orange"
+            android:background="@color/deep_orange"
             android:clickable="true"
             android:focusable="true"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent">
 
 
-        <ImageView
-            android:id="@+id/sample_image"
-            android:layout_width="290dp"
-            android:layout_height="334dp"
-            android:src="@drawable/sample"
-            android:layout_margin="10dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            android:scaleType="fitXY" />
+            <ImageView
+                android:id="@+id/sample_image"
+                android:layout_width="290dp"
+                android:layout_height="334dp"
+                android:layout_margin="10dp"
+                android:scaleType="fitXY"
+                android:src="@drawable/sample"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
-        <ImageView
-            android:id="@+id/appCompatButton"
-            android:layout_width="290dp"
-            android:layout_height="76.5dp"
-            android:layout_marginTop="8dp"
-            android:background="@drawable/background_rec_small"
-            android:clickable="true"
-            android:focusable="true"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.495"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/sample_image" />
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/layout"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="8dp"
+                android:layout_marginTop="11dp"
+                android:background="@drawable/background_rec_small"
+                android:clickable="true"
+                android:focusable="true"
+                android:padding="16dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/sample_image">
 
-        <ImageView
-            android:id="@+id/b1"
-            android:layout_width="145dp"
-            android:layout_height="37.5dp"
-            android:background="@drawable/background_rec_small"
-            android:clickable="true"
-            android:focusable="true"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="@+id/appCompatButton"
-            app:layout_constraintTop_toBottomOf="@+id/appCompatButton" />
+                <TextView
+                    android:id="@+id/title_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="대전 빵지순례"
+                    android:textColor="@color/white"
 
-        <ImageView
-            android:id="@+id/b2"
-            android:layout_width="145dp"
-            android:layout_height="37.5dp"
-            android:background="@drawable/background_rec_small"
-            android:clickable="true"
-            android:focusable="true"
-            app:layout_constraintEnd_toEndOf="@+id/appCompatButton"
-            app:layout_constraintHorizontal_bias="1.0"
-            app:layout_constraintStart_toEndOf="@+id/b1"
-            app:layout_constraintTop_toBottomOf="@+id/appCompatButton" />
+                    android:textSize="20sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
 
-        <ImageView
-            android:id="@+id/add_memory"
-            android:layout_width="290dp"
-            android:layout_height="77dp"
-            android:background="@color/white"
-            android:clickable="true"
-            android:focusable="true"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.495"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/b1" />
+                <TextView
+                    android:id="@+id/body_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="라고 쓰고 뒤집어지게 먹고만 온 돼지파티라고 읽는다..."
+                    android:textColor="@color/white"
+                    android:textSize="12sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/title_tv" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
 
-        <TextView
-            android:id="@+id/main"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="26dp"
-            android:fontFamily="@font/pretendard_bold"
-            android:text="추억 추가하기"
-            android:textColor="@color/orange"
-            android:textFontWeight="700"
-            android:textSize="20sp"
-            app:layout_constraintBottom_toBottomOf="@+id/add_memory"
-            app:layout_constraintEnd_toEndOf="@+id/add_memory"
-            app:layout_constraintHorizontal_bias="0.077"
-            app:layout_constraintStart_toStartOf="@+id/add_memory"
-            app:layout_constraintTop_toBottomOf="@+id/b1"
-            app:layout_constraintVertical_bias="0.136" />
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/deadline_layout"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="-4dp"
+                android:background="@drawable/background_rec_small"
+                android:padding="8dp"
+                app:layout_constraintEnd_toStartOf="@id/member_layout"
+                app:layout_constraintStart_toStartOf="@id/layout"
+                app:layout_constraintTop_toBottomOf="@+id/layout">
 
-        <TextView
-            android:id="@+id/place_tv"
-            android:layout_width="122dp"
-            android:layout_height="32dp"
-            android:layout_marginBottom="8dp"
-            android:fontFamily="@font/pretendard_bold"
-            android:gravity="center|left"
-            android:text="TextView"
-            android:textSize="20sp"
-            app:layout_constraintBottom_toTopOf="@+id/speak_tv"
-            app:layout_constraintEnd_toEndOf="@+id/appCompatButton"
-            app:layout_constraintHorizontal_bias="0.083"
-            app:layout_constraintStart_toStartOf="@+id/appCompatButton"
-            app:layout_constraintTop_toBottomOf="@+id/sample_image"
-            app:layout_constraintVertical_bias="1.0" />
+                <TextView
+                    android:id="@+id/deadline_tv"
+                    style="@style/body_small"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="4dp"
+                    android:text="157일 남음"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
 
-        <TextView
-            android:id="@+id/speak_tv"
-            android:layout_width="262dp"
-            android:layout_height="16dp"
-            android:layout_marginBottom="16dp"
-            android:fontFamily="@font/pretendard_bold"
-            android:gravity="left"
-            android:text="TextView"
-            app:layout_constraintBottom_toBottomOf="@+id/appCompatButton"
-            app:layout_constraintEnd_toEndOf="@+id/appCompatButton"
-            app:layout_constraintStart_toStartOf="@+id/appCompatButton" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
 
-        <TextView
-            android:id="@+id/lock_tv"
-            android:layout_width="81dp"
-            android:layout_height="20dp"
-            android:fontFamily="@font/pretendard_bold"
-            android:text="TextView"
-            app:layout_constraintBottom_toBottomOf="@+id/b1"
-            app:layout_constraintEnd_toEndOf="@+id/b1"
-            app:layout_constraintHorizontal_bias="0.234"
-            app:layout_constraintStart_toStartOf="@+id/b1"
-            app:layout_constraintTop_toTopOf="@+id/b1"
-            app:layout_constraintVertical_bias="0.529" />
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/member_layout"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="-4dp"
+                android:background="@drawable/background_rec_small"
+                android:padding="8dp"
+                app:layout_constraintEnd_toEndOf="@id/layout"
+                app:layout_constraintStart_toEndOf="@id/deadline_layout"
+                app:layout_constraintTop_toBottomOf="@+id/layout">
 
-        <TextView
-            android:id="@+id/people_tv"
-            android:layout_width="97dp"
-            android:layout_height="24dp"
-            android:fontFamily="@font/pretendard_bold"
-            android:text="TextView"
-            app:layout_constraintBottom_toBottomOf="@+id/b2"
-            app:layout_constraintEnd_toEndOf="@+id/b2"
-            app:layout_constraintHorizontal_bias="0.208"
-            app:layout_constraintStart_toEndOf="@+id/b1"
-            app:layout_constraintTop_toTopOf="@+id/b2"
-            app:layout_constraintVertical_bias="0.692" />
+                <TextView
+                    android:id="@+id/member_tv"
+                    style="@style/body_small"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="4dp"
+                    android:text="5명의 모임"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
 
-        <ImageView
-            android:id="@+id/imageView4"
-            android:layout_width="21dp"
-            android:layout_height="31dp"
-            app:layout_constraintBottom_toBottomOf="@+id/add_memory"
-            app:layout_constraintEnd_toEndOf="@+id/add_memory"
-            app:layout_constraintHorizontal_bias="0.875"
-            app:layout_constraintStart_toEndOf="@+id/main"
-            app:layout_constraintTop_toTopOf="@+id/add_memory"
-            app:layout_constraintVertical_bias="0.586"
-            app:srcCompat="@drawable/ic_more_btn" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/next_btn"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_marginHorizontal="8dp"
+                android:layout_marginTop="-4dp"
+                android:layout_marginBottom="8dp"
+                android:background="@color/white"
+                android:padding="16dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/member_layout">
+
+                <TextView
+                    android:id="@+id/add_treasure_tv"
+                    style="@style/title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="보물 추가하기"
+                    android:textColor="@color/deep_orange"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ImageView
+                    android:id="@+id/next__iv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_more_btn"
+                    app:layout_constraintBottom_toBottomOf="@+id/add_treasure_tv"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/add_treasure_tv"
+                    app:tint="@color/deep_orange" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

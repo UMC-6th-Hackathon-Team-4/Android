@@ -19,6 +19,9 @@ class PreviewTreasureDialogFragment: BaseDialogFragment<DialogPreviewTreasureBin
     }
 
     override fun initView() {
-
+        binding.nextBtn.setOnClickListener {
+            viewModel.setNavigateEvent(true)
+            dismiss()
+        }
     }
 }
