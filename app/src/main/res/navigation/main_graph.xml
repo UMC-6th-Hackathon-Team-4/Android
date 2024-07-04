@@ -2,11 +2,7 @@
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/main_graph"
-    app:startDestination="@id/homeFragment">
-    <fragment
-        android:id="@+id/homeFragment"
-        android:name="umc.hackathon.presentation.home.HomeFragment"
-        android:label="HomeFragment" />
+    app:startDestination="@id/homeTab">
     <fragment
         android:id="@+id/settingFragment"
         android:name="umc.hackathon.presentation.setting.SettingFragment"
@@ -23,4 +19,31 @@
         android:id="@+id/createFragment"
         android:name="umc.hackathon.presentation.create.CreateFragment"
         android:label="CreateFragment" />
+    <navigation android:id="@+id/homeTab"
+        app:startDestination="@id/homeFragment">
+        <fragment
+            android:id="@+id/homeFragment"
+            android:name="umc.hackathon.presentation.home.HomeFragment"
+            android:label="HomeFragment" >
+            <action
+                android:id="@+id/action_homeFragment_to_createTreasureFragment"
+                app:destination="@id/createTreasureFragment" />
+        </fragment>
+        <fragment
+            android:id="@+id/createSelectImageFragment"
+            android:name="umc.hackathon.presentation.create.CreateSelectImageFragment"
+            android:label="CreateSelectImageFragment" >
+            <argument
+                android:name="uri"
+                app:argType="android.net.Uri" />
+        </fragment>
+        <fragment
+            android:id="@+id/createTreasureFragment"
+            android:name="umc.hackathon.presentation.create.CreateTreasureFragment"
+            android:label="CreateTreasureFragment" >
+            <action
+                android:id="@+id/action_createTreasureFragment_to_createSelectImageFragment"
+                app:destination="@id/createSelectImageFragment" />
+        </fragment>
+    </navigation>
 </navigation>

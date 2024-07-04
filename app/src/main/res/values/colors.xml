@@ -7,4 +7,5 @@
     <color name="orange">#F6AB23</color>
     <color name="deep_orange">#E9861C</color>
     <color name="brown">#382219</color>
+    <color name="unselected">#586E74</color>
 </resources>

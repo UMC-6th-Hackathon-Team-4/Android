@@ -2,28 +2,28 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
     <item
-        android:id="@+id/homeFragment"
-        android:icon="@drawable/selector_home"
+        android:id="@+id/homeTab"
+        android:icon="@drawable/ic_unselected_home"
         android:title="home" />
 
     <item
         android:id="@+id/mapViewFragment"
-        android:icon="@drawable/ic_dummy"
+        android:icon="@drawable/ic_unselected_map"
         android:title="mapView" />
 
     <item
         android:id="@+id/createFragment"
-        android:icon="@drawable/ic_dummy"
+        android:icon="@drawable/ic_unselected_create"
         android:title="create" />
 
     <item
         android:id="@+id/previousTreasureFragment"
-        android:icon="@drawable/ic_dummy"
+        android:icon="@drawable/ic_unselected_treasure"
         android:title="treasure" />
 
     <item
         android:id="@+id/settingFragment"
-        android:icon="@drawable/ic_dummy"
+        android:icon="@drawable/ic_unselected_setting"
         android:title="setting" />
 
 

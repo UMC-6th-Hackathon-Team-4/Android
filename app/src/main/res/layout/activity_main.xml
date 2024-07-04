@@ -33,8 +33,9 @@
             android:layout_height="wrap_content"
             app:itemBackground="@color/white"
             app:itemRippleColor="@android:color/transparent"
-            app:itemIconTint="@color/black"
+            app:itemIconTint="@drawable/selector_bnv_color"
             app:itemActiveIndicatorStyle="@android:color/transparent"
+            app:labelVisibilityMode="labeled"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintTop_toBottomOf="@id/nav_host_fragment"
             app:menu="@menu/main_menu" />
