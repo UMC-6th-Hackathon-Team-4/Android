@@ -6,4 +6,51 @@
     </style>
 
     <style name="Theme.MyApplication" parent="Base.Theme.MyApplication" />
+    <style name="pretendard_bold">
+        <item name="font">@font/pretendard_bold</item>
+    </style>
+    <style name="pretendard_semiBold">
+        <item name="font">@font/pretendard_semibold</item>
+    </style>
+    <style name="pretendard_medium">
+        <item name="font">@font/pretendard_medium</item>
+    </style>
+    <style name="pretendard_regular">
+        <item name="font">@font/pretendard_regular</item>
+    </style>
+    
+    <style name="post_title">
+        <item name="font">@font/pretendard_bold</item>
+        <item name="android:textSize">20sp</item>
+    </style>
+
+    <style name="title">
+        <item name="font">@font/pretendard_bold</item>
+        <item name="android:textSize">16sp</item>
+    </style>
+    
+    <style name="small_title">
+        <item name="font">@font/pretendard_semibold</item>
+        <item name="android:textSize">14sp</item>
+    </style>
+    
+    <style name="body_large">
+        <item name="font">@font/pretendard_regular</item>
+        <item name="android:textSize">16sp</item>
+    </style>
+
+    <style name="body_medium">
+        <item name="font">@font/pretendard_regular</item>
+        <item name="android:textSize">14sp</item>
+    </style>
+
+    <style name="body_small">
+        <item name="font">@font/pretendard_regular</item>
+        <item name="android:textSize">12sp</item>
+    </style>
+    
+    <style name="caption">
+        <item name="font">@font/pretendard_medium</item>
+        <item name="android:textSize">12sp</item>
+    </style>
 </resources>

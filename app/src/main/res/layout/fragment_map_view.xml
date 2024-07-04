@@ -27,7 +27,7 @@
             android:layout_marginHorizontal="12dp"
             android:layout_marginTop="32dp"
             android:background="@drawable/rectangle_corner_10_white"
-            android:backgroundTint="@color/gray20"
+            android:backgroundTint="@color/light_gray"
             android:gravity="center_vertical"
             android:maxHeight="200dp"
             android:minHeight="30dp"
@@ -39,7 +39,7 @@
                 android:layout_width="24dp"
                 android:layout_height="24dp"
                 android:src="@drawable/ic_search"
-                app:tint="@color/gray60" />
+                app:tint="@color/gray" />
 
             <EditText
                 android:id="@+id/search_address_et"
